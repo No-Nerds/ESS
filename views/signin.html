@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign in</title>
+</head>
+<body>
+	<form>
+		<input type="text" id="username" placeholder="Username">
+		<input type="password" id="password" placeholder="Password">
+		<button type="button" id="btnEnviar"> Enviar </button> 	
+
+	</form>
+
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="javascripts/utils.js"></script>
+<script>
+	
+	$(document).ready(function(){
+
+
+		$('#btnEnviar').click(function(){
+					var obj = {}
+					obj.username = $('#username').val();
+					obj.password = $('#password').val();
+					$.post('login/verify',obj, function (data){
+
+								console.log(data);
+								if(data.result == 1)
+								{
+									window.location = '/';
+
+								}
+								else
+								{
+									console.log('error');
+
+								}
+
+					});
+
+		});
+		
+	});	
+
+
+</script>
+</body>
+</html>
