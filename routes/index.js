@@ -99,6 +99,9 @@ app.get('/staff-administrator', function (req,res,next){
 
 });
 
+
+app.get()
+
 app.get('/profile', function(req,res,next){
 
 	essgamer.callController('usuarios','profile','',req,res);
